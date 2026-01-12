@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: deployment-manager
+  namespace: testing # The namespace where the deployments will be created
+rules:
+- apiGroups: ["apps"]
+  resources: ["deployments", "replicasets"]
+  verbs: ["create", "get", "list", "watch", "update", "patch", "delete"]
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["services", "pods", "serviceaccounts", "secrets", "configmaps", "events"]
+  verbs: ["create", "get", "list", "watch", "update", "patch", "delete"]
