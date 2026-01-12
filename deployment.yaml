@@ -17,6 +17,7 @@ spec:
         app: webserver
         name: webserver
     spec:
+      serviceAccountName: 
       containers:
       - name: nginx
         image: nginx
