@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: apache-deployment
+  name: nginx-deployment
   labels:
     app: webserver
     name: webserver
@@ -18,7 +18,7 @@ spec:
         name: webserver
     spec:
       containers:
-      - name: apache
-        image: fedora/apache
+      - name: nginx
+        image: nginx
         ports:
         - containerPort: 80
